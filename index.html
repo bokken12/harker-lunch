@@ -8,14 +8,39 @@
   <link rel="stylesheet" type="text/css" href="main.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
   <script src="script.js"></script>
+  <script src="https://www.java.com/js/deployJava.js"></script>
+  <!--<script>
+    var attributes = {id: 'parserApplet', 
+                      archive: 'ParserApplet.jar',
+                      code: 'com.patrickzhong.Main.class',
+                      width: '800', 
+                      height: '600'};
+    var parameters = {java_arguments: '-Xmx256m'}; // customize per your needs
+    var version = '1.8'; // JDK version
+    deployJava.runApplet(attributes, parameters, version);
+  </script>!-->
 </head>
 
 <body>
+
+
+  <applet id="ParserApplet"
+    archive="ParserApplet.jar" 
+    code="Main.class"
+    name="ParserApplet"
+    scriptable="true"
+    height="550" 
+    width="100">
+  </applet>
+
 
   <h1>harker lunch</h1>
   <p>green - vegetarian;<br>blue - gluten free option;<br>grey - both;</p>
 
   <div id="sunday" class="day">no lunch</div>
+
+  <button onclick = "console.log('hi');var obj = document.getElementById('ParserApplet');obj.get();">Click</button>
+  <button onclick = "console.log('hi2');parserApplet.get();">Click2</button>
 
   <div id="monday">
     <h2>monday, february 27</h2>
