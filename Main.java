@@ -66,13 +66,37 @@ public class Main {
 		
 		for(int day = 0; day < stripper.days.length; day++)
 			for(int i = 0; i < stripper.types.length; i++)
-				result[day][i] = ts.getTextForRegion("reg-"+day+"-"+i).replace("\n", "");//.replaceFirst("  ", "\n");
+				result[day][i] = format(ts.getTextForRegion("reg-"+day+"-"+i).replace("\n", ""));
 		
 		return result;
 	}
 	
-	private static String format(){
-		return "";
+	private static String format(String str){
+		String word = "";
+		String current = "";
+		int spaces = 0;
+		
+		for(char c : str.toCharArray()){
+			String ch = c+"";
+			
+			if(ch.equals(" ")){
+				spaces++;
+				
+				if(spaces == 1){
+					if(!word.equals(""))
+						current += ch;
+				}
+				else if(spaces == 2)
+					current = "\n";
+			}
+			else {
+				spaces = 0;
+				word += (current + ch);
+				current = "";
+			}
+		}
+		
+		return word;
 	}
 
 }
