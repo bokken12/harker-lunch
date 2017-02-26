@@ -18,7 +18,7 @@ In the provided menu by Harker, certain dishes are marked to be vegetarian, glut
 We display this information to the user by coloring table cells for dishes. The bootstrap default classes `.success`, `.info`, and `.active` are used to provide a simple color key for the user to identify the dishes respectively.
 
 ## Authors
-Neeraj Aggarwal
+Neeraj Aggarwal<br/>
 Patrick Zhong
 
 ## Next Up
